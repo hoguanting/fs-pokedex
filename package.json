@@ -5,8 +5,10 @@
   "main": "src/index.js",
   "scripts": {
     "start": "webpack-dev-server --open --mode development --port 8080",
+    "start:e2e": "webpack-dev-server --mode development --host 127.0.0.1 --port 4173",
     "start-prod": "node app.js",
     "test": "jest",
+    "test:e2e": "playwright test",
     "eslint": "eslint . --config eslint.config.mjs",
     "build": "webpack --mode production"
   },
@@ -34,6 +36,9 @@
     "testEnvironment": "jsdom",
     "setupFiles": [
       "<rootDir>/jest.setup.js"
+    ],
+    "testPathIgnorePatterns": [
+      "e2e"
     ]
   },
   "devDependencies": {
@@ -42,6 +47,7 @@
     "@babel/preset-env": "^7.29.0",
     "@babel/preset-react": "^7.28.5",
     "@eslint/js": "^9.39.5",
+    "@playwright/test": "^1.64.1",
     "@stylistic/eslint-plugin": "^5.10.0",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",

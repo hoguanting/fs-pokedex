@@ -9,6 +9,7 @@ export default [
       'webpack.config.js',
       'eslint.config.js',
       'eslint.config.mjs',
+      'playwright.config.mjs',
       '.eslintrc.js',
       'node_modules/**',
       'dist/**'
